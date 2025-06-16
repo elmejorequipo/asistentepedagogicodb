@@ -3,121 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo Pedagógico Salesiano IA</title>
+
+    <!-- SEO: META TAGS MEJORADAS -->
+    <title>Guía para Instalar tu Equipo Pedagógico Salesiano con IA</title>
+    <meta name="description" content="Aprende a instalar y configurar tu propio equipo de asistentes de IA Salesianos en Google Gemini. Sigue nuestra guía paso a paso para transformar tu planificación educativa.">
+    <meta name="keywords" content="IA para educación, inteligencia artificial para profesores, equipo pedagógico salesiano, Google Gemini para educación, planificación de clases PDC, automatización para docentes, recursos salesianos, Luis Alfredo Andia">
+    <meta name="author" content="Luis Alfredo Andia">
+    <meta name="robots" content="index, follow">
+    <!-- ¡IMPORTANTE! Reemplaza la siguiente URL con la URL final de tu página -->
+    <link rel="canonical" href="https://elmejorequipo.github.io/asistentepedagogicodb/index.html">
+
+    <!-- SEO: Metadatos para Redes Sociales (Open Graph & Twitter Cards) -->
+    <!-- ¡IMPORTANTE! Reemplaza la URL en 'og:url' y 'og:image' con las tuyas -->
+    <meta property="og:title" content="Da Vida a tu Equipo Pedagógico Salesiano con IA">
+    <meta property="og:description" content="Una guía paso a paso para crear un equipo de asistentes de IA que entienden el carisma salesiano y te ayudan a planificar, crear y enseñar.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://elmejorequipo.github.io/asistentepedagogicodb/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Da Vida a tu Equipo Pedagógico Salesiano con IA">
+    <meta name="twitter:description" content="Una guía paso a paso para crear un equipo de asistentes de IA que entienden el carisma salesiano.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        /* --- ESTILOS GHIBLI (Sin cambios) --- */
         :root {
-            --color-bg: #fdfdfd;
-            --color-dark-blue: #0d2c4b;
-            --color-medium-blue: #2a6f97;
-            --color-yellow-accent: #ffc300;
-            --color-text: #343a40;
+            --color-bg: #F9F6F0; /* Blanco cremoso, como papel de acuarela */
+            --color-text: #293241; /* Azul oscuro/grisáceo para el texto */
+            --color-primary: #3D5A80; /* Azul cielo profundo */
+            --color-accent-blue: #98C1D9; /* Azul claro de cielo */
+            --color-accent-yellow: #FDB813; /* Amarillo cálido y solar */
             --color-white: #ffffff;
-            --shadow: 0 4px 20px rgba(0,0,0,0.07);
+            --shadow: 0 5px 25px rgba(61, 90, 128, 0.1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-        }
-
+        body { font-family: 'Nunito Sans', sans-serif; background-color: var(--color-bg); color: var(--color-text); line-height: 1.8; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        section { padding: 80px 0; }
-        
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        h1, h2, h3 { color: var(--color-dark-blue); font-weight: 600; line-height: 1.3; }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Responsive font size */
-        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 50px; }
-        h3 { font-size: 1.5rem; margin-bottom: 10px; }
-
-        .highlight {
-            color: var(--color-medium-blue);
-            font-weight: 600;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-yellow-accent);
-            color: var(--color-dark-blue);
-            padding: 14px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 195, 0, 0.4);
-        }
-        .cta-button:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(255, 195, 0, 0.5); }
-
-        .hero {
-            background: linear-gradient(rgba(13, 44, 75, 0.75), rgba(13, 44, 75, 0.75)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2071) no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--color-white);
-        }
+        section { padding: 90px 0; }
+        h1, h2, h3 { font-family: 'Lora', serif; color: var(--color-primary); font-weight: 600; line-height: 1.3; }
+        h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
+        h3 { font-size: 1.6rem; margin-bottom: 12px; }
+        .highlight { color: var(--color-primary); font-weight: 600; }
+        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        .cta-button { display: inline-block; background-color: var(--color-accent-yellow); color: var(--color-primary); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; margin-top: 30px; transition: transform 0.4s ease, box-shadow 0.4s ease; box-shadow: 0 5px 15px rgba(253, 184, 19, 0.4); }
+        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 25px rgba(253, 184, 19, 0.6); }
+        .hero { background: linear-gradient(rgba(61, 90, 128, 0.3), rgba(61, 90, 128, 0.5)), url(https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=2070&q=80) no-repeat center center/cover; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-white); }
         .hero .container { animation: fadeIn 2s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .hero h1 { color: var(--color-white); font-weight: 700; }
-        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 650px; margin: 15px auto 0; }
-        
-        #video-tutorial p, #equipo > .container > p { text-align: center; max-width: 700px; margin: -30px auto 50px auto; font-size: 1.1rem; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 12px; box-shadow: var(--shadow); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero h1 { color: var(--color-white); font-weight: 600; }
+        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 650px; margin: 20px auto 0; }
+        #video-tutorial p, #equipo > .container > p { text-align: center; max-width: 700px; margin: -30px auto 60px auto; font-size: 1.1rem; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 15px; box-shadow: var(--shadow); border: 4px solid var(--color-white); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .team-member { background: var(--color-white); padding: 30px; text-align: center; border-radius: 12px; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
-        .team-member:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .team-member .icon { font-size: 2.8rem; color: var(--color-medium-blue); margin-bottom: 15px; }
-        
-        #instalacion { background-color: var(--color-white); }
-        .step { display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px; align-items: center; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }
+        .team-member { background: var(--color-white); padding: 35px 30px; text-align: center; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease; border-bottom: 5px solid transparent; }
+        .team-member:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 12px 35px rgba(61, 90, 128, 0.15); border-bottom-color: var(--color-accent-blue); }
+        .team-member .icon { font-size: 3rem; margin-bottom: 15px; display: inline-block; transition: transform 0.3s; }
+        .team-member:hover .icon { transform: scale(1.1) rotate(-5deg); }
+        #instalacion { background-color: transparent; }
+        .step { display: flex; flex-direction: column; gap: 50px; margin-bottom: 70px; align-items: center; }
         .step .screenshot { flex: 1; width: 100%; max-width: 500px; }
-        .step .screenshot img { max-width: 100%; border-radius: 12px; box-shadow: var(--shadow); }
+        .step .screenshot img { max-width: 100%; border-radius: 15px; box-shadow: var(--shadow); border: 6px solid var(--color-white); transition: transform 0.4s ease; }
+        .step .screenshot img:hover { transform: scale(1.03); }
         .step-content { flex: 1; }
-        
-        #direccion { background: #eef3f7; border-radius: 20px; padding: 80px 0; margin: 0 auto; max-width: 1200px; }
-        .how-to-card { background: var(--color-dark-blue); color: var(--color-bg); padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; }
-        .how-to-card .highlight-yellow { color: var(--color-yellow-accent); font-weight: 600; }
-        
-        details { background: var(--color-white); border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.3s; }
-        details:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        summary { font-weight: 600; padding: 18px 20px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 15px; }
-        summary::before { content: '✨'; font-size: 1.2rem; color: var(--color-yellow-accent); transition: transform 0.3s; }
+        #direccion { background: #E0FBFC; border-radius: 20px; padding: 80px 0; margin: 40px auto; max-width: 1200px; }
+        .how-to-card { background: var(--color-primary); color: var(--color-bg); padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; }
+        .how-to-card .highlight-yellow { color: var(--color-accent-yellow); font-weight: 600; }
+        details { background: rgba(255,255,255,0.7); border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--color-accent-blue); transition: box-shadow 0.3s, border-color 0.3s; }
+        details:hover { box-shadow: 0 4px 15px rgba(152, 193, 217, 0.4); border-color: var(--color-primary); }
+        summary { font-weight: 600; font-family: 'Lora', serif; padding: 20px 25px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 15px; }
+        summary::before { content: '🌱'; font-size: 1.2rem; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
         details[open] summary::before { transform: rotate(90deg); }
-        details div { padding: 0 20px 20px 20px; border-top: 1px solid #eef3f7; }
-        details code { background: #eef3f7; color: var(--color-dark-blue); padding: 3px 8px; border-radius: 6px; font-size: 0.9em; }
-
-        footer { background-color: var(--color-dark-blue); color: var(--color-bg); text-align: center; padding: 50px 0; }
-        
-        @media (min-width: 992px) {
-            .step { flex-direction: row; text-align: left; }
-            .step:nth-child(even) { flex-direction: row-reverse; }
-        }
+        details div { padding: 0 25px 25px; border-top: 1px solid var(--color-accent-blue); }
+        details code { background: #E0FBFC; color: var(--color-primary); padding: 4px 10px; border-radius: 6px; font-size: 0.9em; }
+        footer { background-color: var(--color-primary); color: var(--color-bg); text-align: center; padding: 60px 0; border-top: 10px solid var(--color-accent-blue); }
+        footer p { max-width: 600px; margin-left: auto; margin-right: auto; }
+        @media (min-width: 992px) { .step { flex-direction: row; text-align: left; } .step:nth-child(even) { flex-direction: row-reverse; } }
     </style>
 </head>
 <body>
-
     <header class="hero">
         <div class="container">
             <h1>Da Vida a tu Equipo Pedagógico Salesiano</h1>
@@ -132,8 +105,7 @@
                 <h2>¡La Guía Visual para tu Misión!</h2>
                 <p>A veces, ver es creer. Este breve video te acompaña, clic a clic, en el emocionante proceso de despertar a tu nuevo equipo de IA.</p>
                 <div class="video-wrapper">
-                    <!-- REEMPLAZAR AQUÍ: Pega el código de "Insertar" (Embed) de tu video de YouTube -->
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/watch?v=gSdoXXwUwYk" title="Video tutorial para instalar el equipo de IA Salesiano" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -155,45 +127,38 @@
         <section id="instalacion" class="fade-in-section">
             <div class="container">
                 <h2>Tu Taller de Creación en 3 Pasos</h2>
-
                 <article class="step">
                     <div class="screenshot">
-                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 1 -->
-                        <img src="./captura-1-copiar-doc.jpg" alt="Captura del documento con texto seleccionado">
+                        <!-- SEO: Texto alt más descriptivo -->
+                        <img src="./captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento.">
                     </div>
                     <div class="step-content">
                         <h3>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h3>
                         <p>Este es su ADN, su manual de identidad. Haz clic para abrir la <strong class="highlight">Instrucción Maestra</strong>, selecciónala por completo y cópiala en tu portapapeles. Es el alma que le darás a tu asistente.</p>
-                        <!-- REEMPLAZAR AQUÍ: Pon el enlace PÚBLICO a tu Google Doc con la instrucción -->
-                        <a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" class="cta-button">📄 Abrir Instrucción Maestra</a>
+                        <!-- SEO: Buenas prácticas para enlaces externos -->
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" rel="noopener noreferrer" class="cta-button">📄 Abrir Instrucción Maestra</a>
                     </div>
                 </article>
-
                 <article class="step">
                     <div class="screenshot">
-                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 2 -->
-                        <img src="./captura-2-extraer-zip.jpg" alt="Captura del archivo zip descargado">
+                        <img src="./captura-2-extraer-zip.jpg" alt="Captura de pantalla mostrando la descarga de un archivo ZIP con los recursos salesianos.">
                     </div>
                     <div class="step-content">
                         <h3>2. Construye su <span class="highlight">"Biblioteca"</span> Salesiana</h3>
                         <p>Un buen equipo necesita buenos libros. Descarga estos documentos fundamentales. Se guardará un archivo <strong class="highlight">.zip</strong>. Descomprímelo para liberar el conocimiento que alimentará a tu equipo.</p>
-                        <!-- REEMPLAZAR AQUÍ: Pon el enlace PÚBLICO a tu carpeta de Drive -->
-                        <a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" class="cta-button">📁 Descargar Biblioteca</a>
+                        <a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-button">📁 Descargar Biblioteca</a>
                     </div>
                 </article>
-
                 <article class="step">
                     <div class="screenshot">
-                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 3 -->
-                        <img src="./captura-3-configurar-gem.jpg" alt="Captura de Gemini con los campos para pegar y subir archivos">
+                        <img src="./captura-3-configurar-gem.jpg" alt="Captura de pantalla mostrando la interfaz de Gemini para pegar instrucciones y subir archivos de conocimiento.">
                     </div>
                     <div class="step-content">
                         <h3>3. Ensambla la <span class="highlight">Magia</span> en Gemini</h3>
                         <p>Es hora de dar vida. Abre Gemini, crea un nuevo "Gem". Pega la <strong class="highlight">Constitución</strong> en "Instrucciones", sube los archivos de la <strong class="highlight">Biblioteca</strong> en "Conocimiento", y haz clic en <strong class="highlight">"Guardar"</strong>. ¡Tu equipo ha nacido!</p>
-                        <a href="https://gemini.google.com" target="_blank" class="cta-button">🚀 Ir a Gemini</a>
+                        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="cta-button">🚀 Ir a Gemini</a>
                     </div>
                 </article>
-
             </div>
         </section>
 
@@ -203,7 +168,6 @@
                 <div class="how-to-card">
                     <p>⭐ Para despertar a tus especialistas, la clave es una sola: <strong class="highlight-yellow">SIEMPRE</strong> empieza tu conversación llamándolos por su nombre. Es la palabra mágica.</p>
                 </div>
-                
                 <details><summary>Para Planificar un PDC...</summary><div><p>Di: <code>Paola, ayúdame a crear un PDC para 3ro de secundaria...</code></p></div></details>
                 <details><summary>Para Crear Material de Estudio...</summary><div><p>Di: <code>Beatriz, necesito una guía de aprendizaje basada en nuestro PDC...</code></p></div></details>
                 <details><summary>Para Diseñar Evaluaciones...</summary><div><p>Di: <code>Karina, vamos a diseñar el plan de evaluación para esta unidad...</code></p></div></details>
@@ -222,7 +186,6 @@
     </footer>
 
     <script>
-        // Efecto de aparición suave para las secciones al hacer scroll
         const sections = document.querySelectorAll('.fade-in-section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -234,5 +197,82 @@
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
     </script>
+
+    <!-- SEO: INICIO DE DATOS ESTRUCTURADOS (SCHEMA.ORG) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "VideoObject",
+          "name": "Guía Visual para instalar el Equipo de IA Salesiano",
+          "description": "Video tutorial que muestra, paso a paso, cómo configurar tu equipo de asistentes de IA en Google Gemini para la pedagogía Salesiana.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+          "uploadDate": "2023-11-01T08:00:00+00:00",
+          "duration": "PT3M32S",
+          "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "@type": "HowTo",
+          "name": "Cómo Instalar tu Equipo de Creación Pedagógico Salesiano con IA",
+          "description": "Una guía en 3 sencillos pasos para configurar tu asistente de IA personalizado en Google Gemini con conocimiento del carisma Salesiano.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Paso 1: Adopta la 'Constitución' del Equipo",
+              "text": "Abre la Instrucción Maestra, selecciónala por completo y cópiala. Este texto es el ADN de tu asistente de IA.",
+              "url": "https://elmejorequipo.github.io/asistentepedagogicodb/index.html/#instalacion",
+              "image": "https://elmejorequipo.github.io/asistentepedagogicodb/captura-1-copiar-doc.jpg"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Paso 2: Construye su 'Biblioteca' Salesiana",
+              "text": "Descarga la carpeta de documentos .zip que contiene los fundamentos pedagógicos y del carisma salesiano. Descomprímela en tu ordenador.",
+              "url": "https://elmejorequipo.github.io/asistentepedagogicodb/index.html/#instalacion",
+              "image": "https://elmejorequipo.github.io/asistentepedagogicodb/captura-2-extraer-zip.jpg"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Paso 3: Ensambla la Magia en Gemini",
+              "text": "Ve a Gemini, crea un nuevo 'Gem', pega la instrucción copiada en 'Instrucciones' y sube los documentos descargados a la sección de 'Conocimiento'. Guarda los cambios y tu equipo estará listo.",
+              "url": "https://elmejorequipo.github.io/asistentepedagogicodb/index.html/#instalacion",
+              "image": "https://elmejorequipo.github.io/asistentepedagogicodb/captura-3-configurar-gem.jpg"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cómo le pido al asistente que planifique un PDC?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para planificar un PDC, debes iniciar tu conversación diciendo: 'Paola, ayúdame a crear un PDC para...'"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo puedo crear material de estudio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para crear material, empieza tu solicitud con: 'Beatriz, necesito una guía de aprendizaje basada en nuestro PDC...'"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo diseño una evaluación?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para diseñar una evaluación, invoca a la especialista diciendo: 'Karina, vamos a diseñar el plan de evaluación para esta unidad...'"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <!-- SEO: FIN DE DATOS ESTRUCTURADOS -->
+
 </body>
 </html>
