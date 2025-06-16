@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Pedagógico Salesiano IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #fdfdfd;
+            --color-dark-blue: #0d2c4b;
+            --color-medium-blue: #2a6f97;
+            --color-yellow-accent: #ffc300;
+            --color-text: #343a40;
+            --color-white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        section { padding: 80px 0; }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h1, h2, h3 { color: var(--color-dark-blue); font-weight: 600; line-height: 1.3; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Responsive font size */
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 50px; }
+        h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+        .highlight {
+            color: var(--color-medium-blue);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-yellow-accent);
+            color: var(--color-dark-blue);
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 195, 0, 0.4);
+        }
+        .cta-button:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(255, 195, 0, 0.5); }
+
+        .hero {
+            background: linear-gradient(rgba(13, 44, 75, 0.75), rgba(13, 44, 75, 0.75)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2071) no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+        .hero .container { animation: fadeIn 2s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .hero h1 { color: var(--color-white); font-weight: 700; }
+        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 650px; margin: 15px auto 0; }
+        
+        #video-tutorial p, #equipo > .container > p { text-align: center; max-width: 700px; margin: -30px auto 50px auto; font-size: 1.1rem; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 12px; box-shadow: var(--shadow); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .team-member { background: var(--color-white); padding: 30px; text-align: center; border-radius: 12px; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+        .team-member:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .team-member .icon { font-size: 2.8rem; color: var(--color-medium-blue); margin-bottom: 15px; }
+        
+        #instalacion { background-color: var(--color-white); }
+        .step { display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px; align-items: center; }
+        .step .screenshot { flex: 1; width: 100%; max-width: 500px; }
+        .step .screenshot img { max-width: 100%; border-radius: 12px; box-shadow: var(--shadow); }
+        .step-content { flex: 1; }
+        
+        #direccion { background: #eef3f7; border-radius: 20px; padding: 80px 0; margin: 0 auto; max-width: 1200px; }
+        .how-to-card { background: var(--color-dark-blue); color: var(--color-bg); padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; }
+        .how-to-card .highlight-yellow { color: var(--color-yellow-accent); font-weight: 600; }
+        
+        details { background: var(--color-white); border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.3s; }
+        details:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        summary { font-weight: 600; padding: 18px 20px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 15px; }
+        summary::before { content: '✨'; font-size: 1.2rem; color: var(--color-yellow-accent); transition: transform 0.3s; }
+        details[open] summary::before { transform: rotate(90deg); }
+        details div { padding: 0 20px 20px 20px; border-top: 1px solid #eef3f7; }
+        details code { background: #eef3f7; color: var(--color-dark-blue); padding: 3px 8px; border-radius: 6px; font-size: 0.9em; }
+
+        footer { background-color: var(--color-dark-blue); color: var(--color-bg); text-align: center; padding: 50px 0; }
+        
+        @media (min-width: 992px) {
+            .step { flex-direction: row; text-align: left; }
+            .step:nth-child(even) { flex-direction: row-reverse; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Da Vida a tu Equipo Pedagógico Salesiano</h1>
+            <p>Una nueva forma de planificar, crear y enseñar con la chispa de la IA y el corazón de Don Bosco. Emprende este viaje y transforma tu misión educativa.</p>
+            <a href="#video-tutorial" class="cta-button">EMPEZAR EL VIAJE AHORA</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="video-tutorial" class="fade-in-section">
+            <div class="container">
+                <h2>¡La Guía Visual para tu Misión!</h2>
+                <p>A veces, ver es creer. Este breve video te acompaña, clic a clic, en el emocionante proceso de despertar a tu nuevo equipo de IA.</p>
+                <div class="video-wrapper">
+                    <!-- REEMPLAZAR AQUÍ: Pega el código de "Insertar" (Embed) de tu video de YouTube -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="fade-in-section">
+            <div class="container">
+                <h2>Conoce a los Artesanos de tu Misión</h2>
+                <p>No es una IA, es tu equipo. Cinco especialistas listos para colaborar, inspirar y construir a tu lado.</p>
+                <div class="team-grid">
+                    <div class="team-member"> <div class="icon">📐</div> <h3>Paola, la Arquitecta</h3> <p>Traza los planos de tus clases (PDC) con una precisión y coherencia asombrosas.</p> </div>
+                    <div class="team-member"> <div class="icon">🎨</div> <h3>Beatriz, la Creativa</h3> <p>Pinta tus ideas con vida, diseñando guías y narrativas que conectan con cada estudiante.</p> </div>
+                    <div class="team-member"> <div class="icon">📊</div> <h3>Karina, la Analista</h3> <p>Aporta claridad a la evaluación, creando instrumentos justos que revelan el verdadero progreso.</p> </div>
+                    <div class="team-member"> <div class="icon">💬</div> <h3>Percy, el Coach</h3> <p>Tu entrenador personal para conversaciones difíciles y dinámicas de clase magistrales.</p> </div>
+                    <div class="team-member"> <div class="icon">💻</div> <h3>Luis, el Mentor Digital</h3> <p>Convierte tu pedagogía en experiencias digitales interactivas, accesibles y memorables.</p> </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion" class="fade-in-section">
+            <div class="container">
+                <h2>Tu Taller de Creación en 3 Pasos</h2>
+
+                <article class="step">
+                    <div class="screenshot">
+                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 1 -->
+                        <img src="./images/placeholder.png" alt="Captura del documento con texto seleccionado">
+                    </div>
+                    <div class="step-content">
+                        <h3>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h3>
+                        <p>Este es su ADN, su manual de identidad. Haz clic para abrir la <strong class="highlight">Instrucción Maestra</strong>, selecciónala por completo y cópiala en tu portapapeles. Es el alma que le darás a tu asistente.</p>
+                        <!-- REEMPLAZAR AQUÍ: Pon el enlace PÚBLICO a tu Google Doc con la instrucción -->
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" class="cta-button">📄 Abrir Instrucción Maestra</a>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="screenshot">
+                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 2 -->
+                        <img src="./images/placeholder.png" alt="Captura del archivo zip descargado">
+                    </div>
+                    <div class="step-content">
+                        <h3>2. Construye su <span class="highlight">"Biblioteca"</span> Salesiana</h3>
+                        <p>Un buen equipo necesita buenos libros. Descarga estos documentos fundamentales. Se guardará un archivo <strong class="highlight">.zip</strong>. Descomprímelo para liberar el conocimiento que alimentará a tu equipo.</p>
+                        <!-- REEMPLAZAR AQUÍ: Pon el enlace PÚBLICO a tu carpeta de Drive -->
+                        <a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" class="cta-button">📁 Descargar Biblioteca</a>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="screenshot">
+                        <!-- REEMPLAZAR AQUÍ: RUTA A TU IMAGEN 3 -->
+                        <img src="./images/placeholder.png" alt="Captura de Gemini con los campos para pegar y subir archivos">
+                    </div>
+                    <div class="step-content">
+                        <h3>3. Ensambla la <span class="highlight">Magia</span> en Gemini</h3>
+                        <p>Es hora de dar vida. Abre Gemini, crea un nuevo "Gem". Pega la <strong class="highlight">Constitución</strong> en "Instrucciones", sube los archivos de la <strong class="highlight">Biblioteca</strong> en "Conocimiento", y haz clic en <strong class="highlight">"Guardar"</strong>. ¡Tu equipo ha nacido!</p>
+                        <a href="https://gemini.google.com" target="_blank" class="cta-button">🚀 Ir a Gemini</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="direccion" class="fade-in-section">
+            <div class="container">
+                <h2>El Secreto para Dirigir a tu Equipo</h2>
+                <div class="how-to-card">
+                    <p>⭐ Para despertar a tus especialistas, la clave es una sola: <strong class="highlight-yellow">SIEMPRE</strong> empieza tu conversación llamándolos por su nombre. Es la palabra mágica.</p>
+                </div>
+                
+                <details><summary>Para Planificar un PDC...</summary><div><p>Di: <code>Paola, ayúdame a crear un PDC para 3ro de secundaria...</code></p></div></details>
+                <details><summary>Para Crear Material de Estudio...</summary><div><p>Di: <code>Beatriz, necesito una guía de aprendizaje basada en nuestro PDC...</code></p></div></details>
+                <details><summary>Para Diseñar Evaluaciones...</summary><div><p>Di: <code>Karina, vamos a diseñar el plan de evaluación para esta unidad...</code></p></div></details>
+                <details><summary>Para Entrenar tus Habilidades...</summary><div><p>Di: <code>Percy, quiero simular una entrevista con un padre de familia...</code></p></div></details>
+                <details><summary>Para Crear Actividades Digitales...</summary><div><p>Di: <code>Luis, transforma esta lección en una actividad web interactiva...</code></p></div></details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Hecho con Corazón para Inspirar</strong></p>
+            <p><small>Recuerda que esta IA es un aliado en tu misión, un compañero en el patio digital. Pero la verdadera magia reside siempre en tu presencia, tu sonrisa y tu corazón de educador salesiano.</small></p>
+            <p style="margin-top: 20px;"><small>Iniciativa de [Tu Nombre/Tu Institución]. Si ha encendido una chispa en ti, ¡comparte esta luz!</small></p>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto de aparición suave para las secciones al hacer scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
