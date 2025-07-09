@@ -49,7 +49,6 @@
         h4 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-primary); font-weight: 700;}
         .highlight { color: var(--color-accent-blue); font-weight: 700; }
         
-        /* Navegación */
         .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); z-index: 1000; box-shadow: var(--shadow-sm); transition: background-color 0.3s; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .nav-logo { font-family: 'Lora', serif; font-weight: 600; color: var(--color-primary); text-decoration: none; font-size: 1.2rem; }
@@ -59,17 +58,14 @@
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .nav-toggle { display: none; cursor: pointer; }
 
-        /* General */
         .fade-in-section { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
         .cta-button { display: inline-block; background: linear-gradient(45deg, var(--color-accent-blue), #0056b3); color: var(--color-white); padding: 16px 42px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; margin-top: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: var(--shadow-lg); border: none; }
         .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(0, 123, 255, 0.3); }
         
-        /* Hero */
         .hero { background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 34, 68, 0.8)), url(https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=2070&q=80) no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-white); }
         .hero p { font-size: 1.25rem; max-width: 700px; margin: 20px auto 0; opacity: 0.9; }
         
-        /* Sección Capacidades Clave */
         #capacidades { background-color: var(--color-white); }
         .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .capability-card { background: var(--color-white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
@@ -77,13 +73,11 @@
         .capability-card .icon { color: var(--color-accent-blue); margin-bottom: 1rem; }
         .capability-card h3 { font-size: 1.5rem; }
 
-        /* Sección Testimonios */
         #testimonios { background-color: #f8f9fa; }
         .testimonial-card { background: var(--color-white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-sm); text-align: center; }
         .testimonial-card p { font-style: italic; margin-bottom: 1rem; }
         .testimonial-author { font-weight: 700; color: var(--color-primary); }
 
-        /* Resto de Estilos (adaptados de la versión anterior) */
         #lanzamiento p, #video-tutorial p, #equipo > .container > p, #instalacion > .container > p { text-align: center; max-width: 700px; margin: -40px auto 60px auto; font-size: 1.1rem; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 15px; box-shadow: var(--shadow-lg); border: 4px solid var(--color-white); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -93,14 +87,40 @@
         #lanzamiento { background-color: var(--color-white); }
         #lanzamiento .container { max-width: 800px; text-align: left; }
         #lanzamiento h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
-        #lanzamiento ul { list-style-position: inside; padding-left: 1rem; }
-        #direccion { background: linear-gradient(170deg, #003366 0%, #002244 100%); }
-        .copy-button { /* ... (sin cambios) */ }
-        .copy-button .copy-feedback { position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background-color: var(--color-primary-dark); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-        .copy-button .copy-feedback.show { opacity: 1; }
+        #lanzamiento ul { list-style-position: inside; padding-left: 1rem; margin-bottom: 1rem; }
+        #instalacion { background-color: #f8f9fa; }
+        .step { display: flex; flex-direction: column; gap: 3rem; margin-bottom: 5rem; align-items: center; }
+        .screenshot-wrapper { flex: 1; width: 100%; max-width: 500px; background: #e9ecef; border-radius: 10px; padding: 1rem; border: 1px solid #ced4da; }
+        .browser-bar { display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid #ced4da; }
+        .browser-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .screenshot-wrapper img { max-width: 100%; display: block; border-radius: 0 0 8px 8px; }
+        .step-content { flex: 1; padding: 0 1rem; }
+        .alert-warning { padding: 20px; background-color: #fff3cd; border-left: 5px solid #FFC107; color: #664d03; border-radius: 8px; margin: 30px 0; }
+        #direccion { background: linear-gradient(170deg, #003366 0%, #002244 100%); color: var(--color-white); }
+        #direccion h2 { color: var(--color-white); }
+        .direccion-intro { text-align: center; color: var(--color-accent-blue); font-size: 1.1rem; max-width: 700px; margin: -40px auto 60px; }
+        .direccion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .direccion-card { background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); text-align: center; transition: transform 0.3s ease, background 0.3s ease; display: flex; flex-direction: column; }
+        .direccion-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.2); }
+        .card-icon { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; color: var(--color-accent-yellow); }
+        .card-title { font-family: 'Lora', serif; color: var(--color-white); font-size: 1.5rem; margin-bottom: 1rem; }
+        .card-description { font-weight: 300; color: #e0e0e0; margin-bottom: 1.5rem; flex-grow: 1; }
+        .card-prompt { position: relative; background: rgba(0, 0, 0, 0.3); color: var(--color-white); padding: 1rem; border-radius: 8px; font-family: 'Menlo', 'Courier New', Courier, monospace; font-size: 0.95rem; text-align: left; white-space: pre-wrap; word-wrap: break-word; }
+        .card-prompt .prompt-name { color: var(--color-accent-yellow); font-weight: 700; }
+        .copy-button { position: relative; top: 0; right: 0; background: var(--color-accent-yellow); color: var(--color-primary-dark); border: none; border-radius: 5px; cursor: pointer; padding: 0.3rem 0.5rem; transition: background-color 0.3s; font-size: 0.8rem; }
+        .copy-button:hover { background-color: #ffca2c; }
+        .copy-feedback { position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); background-color: var(--color-primary-dark); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; white-space: nowrap; }
+        .copy-feedback.show { opacity: 1; transform: translateX(-50%) translateY(-5px); }
         footer { background-color: var(--color-primary-dark); color: var(--color-bg); text-align: center; padding: 4rem 0; }
+        footer p { max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        @media (max-width: 768px) { /* ... (sin cambios) */ }
+        @media (max-width: 768px) {
+            .nav-menu { position: fixed; top: var(--header-height); right: -100%; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--color-bg); flex-direction: column; align-items: center; justify-content: center; transition: right 0.5s ease-in-out; }
+            .nav-menu.active { right: 0; }
+            .nav-toggle { display: block; }
+            section { padding: 80px 0; }
+        }
+        @media (min-width: 992px) { .step { flex-direction: row; text-align: left; } .step:nth-child(even) { flex-direction: row-reverse; text-align: right; } .step-content {padding: 0;} }
     </style>
 </head>
 <body>
@@ -133,17 +153,17 @@
                 <h2 id="capacidades-title">Capacidades Clave para el Docente del Siglo XXI</h2>
                 <div class="capabilities-grid">
                     <div class="capability-card">
-                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
                         <h3>Planificación MESCP</h3>
                         <p>Genera Planes de Desarrollo Curricular (PDC) perfectamente alineados al Modelo Educativo Sociocomunitario Productivo. Ahorra horas de trabajo administrativo.</p>
                     </div>
                     <div class="capability-card">
-                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M12 5c-2.76 0-5 2.24-5 5 0 2.22 1.44 4.11 3.43 4.79"></path></svg></div>
                         <h3>Inclusión y DUA</h3>
                         <p>Crea guías de aprendizaje y recursos que integran desde el inicio los principios del Diseño Universal del Aprendizaje (DUA) y adaptaciones curriculares específicas.</p>
                     </div>
                     <div class="capability-card">
-                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
                         <h3>Automatización con Autocrat</h3>
                         <p>Exporta tus PDCs a una fila de Google Sheets y automatiza la creación de informes profesionales con Autocrat. Te guiamos en todo el proceso.</p>
                     </div>
@@ -152,10 +172,29 @@
         </section>
 
         <section id="lanzamiento" class="fade-in-section" role="region" aria-labelledby="lanzamiento-title">
-            </section>
+            <div class="container">
+                <h2 id="lanzamiento-title">Anuncio de Lanzamiento: Versión 2.1</h2>
+                <p>¡Hoy es un gran día para la innovación educativa en Bolivia! Nos complace anunciar el lanzamiento del <strong>Asistente Pedagógico Salesiano 2.1</strong>, una evolución sin precedentes de nuestra herramienta de inteligencia artificial, rediseñada desde cero para ser el aliado más completo, preciso y humano para cada docente en el país.</p>
+                <h3>Un Equipo de Expertos a Tu Servicio</h3>
+                <p>El corazón del Asistente 2.1 es su equipo multidisciplinario:</p>
+                <ul>
+                    <li><strong>Paola, la Arquitecta Curricular:</strong> Forja PDCs alineados al MESCP y listos para automatizar.</li>
+                    <li><strong>Beatriz, la Ilustrada Creativa:</strong> Diseña guías de aprendizaje que integran el DUA.</li>
+                    <li><strong>Karina, la Analista de Evaluación:</strong> Construye rúbricas ponderadas y un "Libro de Calificaciones" completo.</li>
+                    <li><strong>Luis, el Mentor Digital:</strong> Transforma tus ideas en recursos web interactivos, videos y más.</li>
+                    <li><strong>Percy, el Coach Pedagógico:</strong> Entrena tus habilidades con simulaciones prácticas y realistas.</li>
+                    <li><strong>Ivan, el Orquestador de Sesión:</strong> Gestiona tu sesión, recuerda tus proyectos y asegura un flujo de trabajo sin interrupciones.</li>
+                </ul>
+                <h3>Inteligencia que Entiende Bolivia</h3>
+                <p>El Asistente 2.1 no es una IA genérica. Ha sido programado para encarnar los principios del <strong>Modelo Educativo Sociocomunitario Productivo (MESCP)</strong> y el carisma del <strong>Sistema Preventivo de Don Bosco</strong>, entendiendo el contexto educativo boliviano.</p>
+            </div>
+        </section>
 
         <section id="instalacion" class="fade-in-section" role="region" aria-labelledby="instalacion-title">
-            </section>
+            <div class="container">
+                <h2 id="instalacion-title">Tu Taller de Creación: Elige tu Camino</h2>
+                </div>
+        </section>
         
         <section id="testimonios" class="fade-in-section" role="region" aria-labelledby="testimonios-title">
             <div class="container">
@@ -178,21 +217,85 @@
     </main>
 
     <footer role="contentinfo">
-        </footer>
+        <div class="container">
+            <p><strong>Hecho con Corazón para Inspirar</strong></p>
+            <p><small>Recuerda que esta IA es un aliado en tu misión, un compañero en el patio digital. Pero la verdadera magia reside siempre en tu presencia, tu sonrisa y tu corazón de educador salesiano.</small></p>
+            <p style="margin-top: 20px;"><small>Iniciativa de Luis Alfredo Andia. Si ha encendido una chispa en ti, ¡comparte esta luz!</small></p>
+        </div>
+    </footer>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Asistente Pedagógico Salesiano 2.1",
+          "operatingSystem": "Web (Google Gemini, Google AI Studio)",
+          "applicationCategory": "EducationalApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "42"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Un equipo de IA con 5 especialistas (planificación, creatividad, evaluación, coaching, tecnología) diseñado para servir a los docentes del ecosistema educativo boliviano, alineado con el MESCP y el carisma Salesiano."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿El Asistente Pedagógico Salesiano entiende el MESCP de Bolivia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, el Asistente Pedagógico Salesiano 2.1 está específicamente programado para entender y aplicar los principios del Modelo Educativo Sociocomunitario Productivo (MESCP), incluyendo la creación de Objetivos Holísticos y la alineación con el Proyecto Socioproductivo (PSP)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo me ayuda el asistente con la inclusión (DUA)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El asistente integra el Diseño Universal del Aprendizaje (DUA) por defecto. Beatriz, la especialista en creatividad, incluye múltiples formas de representación, expresión e implicación en todas las guías. Además, el sistema siempre pregunta por adaptaciones curriculares específicas al inicio de la planificación."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo automatizar mis informes de planificación con esta herramienta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Paola, la arquitecta curricular, puede exportar tu Plan de Desarrollo Curricular (PDC) a un formato compatible con Google Sheets. La guía incluye un tutorial completo para usarlo con Autocrat, un complemento que genera documentos PDF o Google Docs automáticamente a partir de tu base de datos de planificación."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // ... (código para animaciones y menú móvil sin cambios) ...
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+            });
 
-            // Funcionalidad de copiar al portapapeles MEJORADA
             document.querySelectorAll('.copy-button').forEach(button => {
                 const feedbackEl = document.createElement('div');
                 feedbackEl.className = 'copy-feedback';
                 feedbackEl.textContent = '¡Copiado!';
                 button.appendChild(feedbackEl);
 
-                button.addEventListener('click', () => {
-                    const promptText = button.closest('.card-prompt').getAttribute('data-prompt');
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const promptText = e.currentTarget.closest('.card-prompt').getAttribute('data-prompt');
                     navigator.clipboard.writeText(promptText).then(() => {
                         feedbackEl.classList.add('show');
                         setTimeout(() => {
@@ -201,6 +304,17 @@
                     }).catch(err => console.error('Error al copiar:', err));
                 });
             });
+
+            const faders = document.querySelectorAll('.fade-in-section');
+            const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
         });
     </script>
 </body>
