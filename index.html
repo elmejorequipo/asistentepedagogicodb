@@ -44,7 +44,8 @@
         html { scroll-behavior: smooth; font-size: 16px; }
         body { font-family: 'Nunito Sans', sans-serif; background-color: var(--color-bg); color: var(--color-text); line-height: 1.9; font-weight: 400; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        section { padding: 120px 0; }
+        section { padding: 120px 0; border-bottom: 1px solid #e0e0e0; }
+        section:last-of-type { border-bottom: none; }
         h1, h2, h3, h4 { font-family: 'Lora', serif; color: var(--color-primary); font-weight: 600; line-height: 1.3; }
         h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
         h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
@@ -52,7 +53,6 @@
         h4 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--color-primary); font-weight: 700;}
         .highlight { color: var(--color-primary); font-weight: 700; }
         
-        /* --- NAVEGACIÓN --- */
         .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: background-color 0.3s; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .nav-logo { font-family: 'Lora', serif; font-weight: 600; color: var(--color-primary); text-decoration: none; font-size: 1.2rem; }
@@ -72,7 +72,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .hero h1 { color: var(--color-white); font-weight: 600; }
         .hero p { font-size: 1.2rem; font-weight: 300; max-width: 650px; margin: 20px auto 0; }
-        #video-tutorial p, #equipo > .container > p, #instalacion > .container > p { text-align: center; max-width: 700px; margin: -40px auto 60px auto; font-size: 1.1rem; }
+        #lanzamiento .container p, #video-tutorial p, #equipo > .container > p, #instalacion > .container > p { text-align: center; max-width: 700px; margin: -40px auto 60px auto; font-size: 1.1rem; }
         
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 15px; box-shadow: var(--shadow); border: 4px solid var(--color-white); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -92,8 +92,11 @@
         .step-content { flex: 1; padding: 0 1rem; }
         .alert-warning { padding: 20px; background-color: #fdf0d5; border-left: 5px solid #FDB813; color: #8a6d3b; border-radius: 8px; margin: 30px 0; }
         
-        /* --- SECCIÓN DIRECCIÓN MEJORADA --- */
-        #direccion { background: linear-gradient(170deg, #3D5A80 0%, #293241 100%); color: var(--color-bg); border-radius: 20px; margin: 40px auto; max-width: 1200px; }
+        #lanzamiento .container { max-width: 800px; text-align: left; }
+        #lanzamiento .container h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+        #lanzamiento .container ul { list-style-position: inside; padding-left: 1rem; }
+
+        #direccion { background: linear-gradient(170deg, #3D5A80 0%, #293241 100%); color: var(--color-bg); margin: 0 auto; }
         #direccion h2 { color: var(--color-white); }
         .direccion-intro { text-align: center; color: var(--color-accent-blue); font-size: 1.1rem; max-width: 700px; margin: -40px auto 60px; }
         .direccion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -110,7 +113,6 @@
         footer { background-color: var(--color-primary-dark); color: var(--color-bg); text-align: center; padding: 4rem 0; }
         footer p { max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        /* --- MEDIA QUERIES PARA RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-menu { position: fixed; top: var(--header-height); right: -100%; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--color-bg); flex-direction: column; align-items: center; justify-content: center; transition: right 0.5s ease-in-out; }
             .nav-menu.active { right: 0; }
@@ -125,6 +127,7 @@
         <nav class="nav-container container" role="navigation" aria-label="Navegación principal">
             <a href="#" class="nav-logo">Equipo Pedagógico IA 2.0</a>
             <ul class="nav-menu">
+                <li><a href="#lanzamiento" class="nav-link">Lanzamiento 2.0</a></li>
                 <li><a href="#equipo" class="nav-link">El Equipo</a></li>
                 <li><a href="#instalacion" class="nav-link">Instalación</a></li>
                 <li><a href="#direccion" class="nav-link">Dirección</a></li>
@@ -139,12 +142,129 @@
         <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
             <div class="container">
                 <h1 id="hero-title">Asistente Pedagógico Salesiano 2.0</h1>
-                <p>La evolución de la planificación docente. Un equipo de especialistas IA alineados con el MESCP de Bolivia, listos para ser tu aliado más completo, preciso y humano. [cite: 9, 10, 11]</p>
+                <p>La evolución de la planificación docente. Un equipo de especialistas IA alineados con el MESCP de Bolivia, listos para ser tu aliado más completo, preciso y humano.</p>
                 <a href="#instalacion" class="cta-button">IR A LA GUÍA DE INSTALACIÓN</a>
             </div>
         </section>
 
-        </main>
+        <section id="video-tutorial" class="fade-in-section" role="region" aria-labelledby="video-title">
+            <div class="container">
+                <h2 id="video-title">¡La Guía Visual para tu Misión!</h2>
+                <p>A veces, ver es creer. Este breve video te acompaña, clic a clic, en el emocionante proceso de despertar a tu nuevo equipo de IA.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video tutorial para instalar el equipo de IA Salesiano" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section id="lanzamiento" class="fade-in-section" role="region" aria-labelledby="lanzamiento-title">
+            <div class="container">
+                <h2 id="lanzamiento-title">¡Presentamos la Versión 2.0!</h2>
+                <p>¡Hoy es un gran día para la innovación educativa en Bolivia! Nos complace anunciar el lanzamiento del <strong>Asistente Pedagógico Salesiano 2.0</strong>, una evolución sin precedentes de nuestra herramienta de inteligencia artificial, rediseñada desde cero para ser el aliado más completo, preciso y humano para cada docente en el país.</p>
+                <p>Esta no es solo una actualización; es una reinvención. Basada en la "Constitución Final Unificada v40.0", la versión 2.0 presenta un equipo de especialistas IA con una inteligencia y cohesión nunca antes vistas, listos para transformar la manera en que planificas, creas y enseñas.</p>
+                
+                <h3>Un Equipo de Expertos a Tu Servicio, Ahora Más Inteligente que Nunca</h3>
+                <p>El corazón del Asistente 2.0 es su equipo multidisciplinario, ahora con roles más definidos y una nueva figura clave:</p>
+                <ul>
+                    [cite_start]<li><strong>Paola, la Arquitecta Curricular:</strong> Forja Planes de Desarrollo Curricular (PDC) con una precisión milimétrica, alineada al MESCP y con la capacidad de exportar tus planes a formatos de tabla para bases de datos. [cite: 110, 118, 527, 528]</li>
+                    [cite_start]<li><strong>Beatriz, la Ilustrada Creativa:</strong> Diseña Guías de Aprendizaje que cautivan, integrando de forma obligatoria el Diseño Universal del Aprendizaje (DUA) y adaptándose proactivamente a las necesidades específicas de tus estudiantes. [cite: 111, 128, 178, 192]</li>
+                    [cite_start]<li><strong>Karina, la Analista de Evaluación:</strong> Construye instrumentos de evaluación justos y claros, desde rúbricas ponderadas hasta un completo "Libro de Calificaciones" que automatiza los cálculos. [cite: 112, 138, 198]</li>
+                    [cite_start]<li><strong>Luis, el Mentor Digital:</strong> Te acompaña pacientemente para transformar tus ideas en actividades web interactivas, presentaciones modernas e incluso videos educativos generados por IA, garantizando siempre la calidad técnica y pedagógica. [cite: 114, 153, 156]</li>
+                    <li><strong>Percy, el Coach Pedagógico:</strong> Tu entrenador personal para pulir tus habilidades. [cite_start]Simula entrevistas con padres, te entrena en métodos activos y ahora, de forma proactiva, es "llamado" por otros expertos para ofrecerte desarrollo profesional justo cuando lo necesitas. [cite: 45, 113, 143, 145]</li>
+                    <li><strong>Presentando a Ivan, el Orquestador de Sesión:</strong> ¡La gran novedad! Ivan es el gestor del equipo. [cite_start]Te da la bienvenida, recuerda tus proyectos pendientes de sesiones anteriores y maneja cualquier solicitud que se salga de la especialidad del equipo, asegurando que tu flujo de trabajo nunca se interrumpa. [cite: 60, 78, 85, 89, 166, 168]</li>
+                </ul>
+
+                <h3>Inteligencia que Entiende Bolivia: MESCP y Sistema Preventivo en su ADN</h3>
+                <p>El Asistente 2.0 no es una IA genérica. [cite_start]Ha sido programado para encarnar los principios del <strong>Modelo Educativo Sociocomunitario Productivo (MESCP)</strong> y vivir según el carisma del <strong>Sistema Preventivo de Don Bosco (Razón, Amor, Religión)</strong>. [cite: 11] [cite_start]Desde la creación del Objetivo Holístico hasta la sugerencia de actividades basadas en el PSP, cada interacción está diseñada para el ecosistema educativo boliviano. [cite: 9, 621, 632]</p>
+
+                <h3>Un Flujo de Trabajo que Aprende de Ti</h3>
+                <p>Hemos implementado protocolos que hacen la experiencia más fluida e inteligente:</p>
+                <ul>
+                    <li><strong>Memoria a Largo Plazo:</strong> Ivan recuerda tus proyectos. [cite_start]Al volver, te preguntará si quieres continuar donde lo dejaste o empezar algo nuevo. [cite: 89, 95]</li>
+                    [cite_start]<li><strong>Mejora Continua Proactiva:</strong> Al terminar una tarea, los expertos te sugerirán proactivamente el siguiente paso lógico, como llamar a Percy para un entrenamiento práctico sobre el recurso que acabas de crear. [cite: 24, 45]</li>
+                    [cite_start]<li><strong>Inclusión por Defecto:</strong> Al iniciar cualquier planificación, el asistente te hará la "Pregunta de Inclusión Universal" para asegurar que las adaptaciones curriculares y el DUA sean considerados desde el principio. [cite: 34, 36]</li>
+                </ul>
+                
+                <h3>Automatización Real para Liberar tu Tiempo</h3>
+                <p>Sabemos que tu tiempo es valioso. Por eso, hemos creado funciones de automatización poderosas:</p>
+                <ul>
+                    <li><strong>Exporta tu PDC a Google Sheets:</strong> Paola puede convertir cualquier PDC en una única fila de datos estructurada, lista para ser usada en una base de datos de Google Sheets. [cite_start]Te incluimos un tutorial para usarlo con <strong>Autocrat</strong> y automatizar la generación de informes. [cite: 527, 528, 548]</li>
+                    [cite_start]<li><strong>Crea Recursos Digitales sin Esfuerzo:</strong> Con la guía de Luis, puedes generar actividades interactivas en un solo bloque de código listo para copiar y pegar en tu plataforma virtual. [cite: 158, 289, 318]</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section id="equipo" class="fade-in-section" role="region" aria-labelledby="equipo-title">
+            <div class="container">
+                <h2 id="equipo-title">Conoce a los Artesanos de tu Misión</h2>
+                <p>No es una IA, es tu equipo. Cinco especialistas listos para colaborar, inspirar y construir a tu lado.</p>
+                <div class="team-grid">
+                    <div class="team-member"> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div> <h3>Paola, la Arquitecta</h3> <p>Traza los planos de tus clases (PDC) con una precisión y coherencia asombrosas.</p> </div>
+                    <div class="team-member"> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div> <h3>Beatriz, la Creativa</h3> <p>Pinta tus ideas con vida, diseñando guías y narrativas que conectan con cada estudiante.</p> </div>
+                    <div class="team-member"> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div> <h3>Karina, la Analista</h3> <p>Aporta claridad a la evaluación, creando instrumentos justos que revelan el verdadero progreso.</p> </div>
+                    <div class="team-member"> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div> <h3>Percy, el Coach</h3> <p>Tu entrenador personal para conversaciones difíciles y dinámicas de clase magistrales.</p> </div>
+                    <div class="team-member"> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div> <h3>Luis, el Mentor Digital</h3> <p>Convierte tu pedagogía en experiencias digitales interactivas, accesibles y memorables.</p> </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion" class="fade-in-section" role="region" aria-labelledby="instalacion-title">
+            <div class="container">
+                <h2 id="instalacion-title">Tu Taller de Creación: Elige tu Camino</h2>
+                <p>Dependiendo de si usas una cuenta de Google gratuita o una de pago, el método para crear tu equipo varía ligeramente. ¡Elige la opción que se ajuste a ti!</p>
+                <div class="alert-warning">
+                    <strong>¿Cuál es la diferencia?</strong> Las <strong class="highlight">cuentas de pago</strong> permiten crear "Gems" que guardan los archivos de conocimiento permanentemente. En las <strong class="highlight">cuentas gratuitas</strong>, usando AI Studio, los archivos deben cargarse en cada sesión.
+                </div>
+
+                <h3>Opción A: Para Cuentas de Pago (con Gems de Gemini)</h3>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento."></div>
+                    <div class="step-content"><h4>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h4><p>Este es su ADN. Haz clic para abrir la <strong class="highlight">Instrucción Maestra</strong>, selecciónala por completo y cópiala en tu portapapeles. Es el alma que le darás a tu asistente.</p><a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" rel="noopener noreferrer" class="cta-button">📄 Abrir Instrucción Maestra</a></div>
+                </article>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-2-extraer-zip.jpg" alt="Captura de pantalla mostrando la descarga de un archivo ZIP con los recursos salesianos."></div>
+                    <div class="step-content"><h4>2. Construye su <span class="highlight">"Biblioteca"</span> Salesiana</h4><p>Un buen equipo necesita buenos libros. Descarga estos documentos fundamentales. Se guardará un archivo <strong class="highlight">.zip</strong>. Descomprímelo para liberar el conocimiento que alimentará a tu equipo.</p><a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-button">📁 Descargar Biblioteca</a></div>
+                </article>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-3-configurar-gem.jpg" alt="Captura de pantalla mostrando la interfaz de Gemini para pegar instrucciones y subir archivos de conocimiento."></div>
+                    <div class="step-content"><h4>3. Ensambla la <span class="highlight">Magia</span> en Gemini</h4><p>Es hora de dar vida. Abre Gemini, crea un nuevo "Gem". Pega la <strong class="highlight">Constitución</strong> en "Instrucciones", sube los archivos de la <strong class="highlight">Biblioteca</strong> en "Conocimiento", y haz clic en <strong class="highlight">"Guardar"</strong>. ¡Tu equipo ha nacido!</p><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="cta-button">🚀 Ir a Gemini</a></div>
+                </article>
+
+                <h3>Opción B: Para Cuentas Gratuitas (con AI Studio)</h3>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra."></div>
+                    <div class="step-content"><h4>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h4><p>Este es su ADN. Haz clic para abrir la <strong class="highlight">Instrucción Maestra</strong>, selecciónala por completo y cópiala en tu portapapeles. Es el alma que le darás a tu asistente.</p><a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" rel="noopener noreferrer" class="cta-button">📄 Abrir Instrucción Maestra</a></div>
+                </article>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_1_instruccion.png" alt="Captura de pantalla de AI Studio para pegar instrucciones."></div>
+                    <div class="step-content"><h4>2. Ingresa a <span class="highlight">AI Studio</span> e Inserta la Instrucción</h4><p>Ve a Google AI Studio. En la sección de <strong class="highlight">instrucciones del sistema (System instructions)</strong>, pega la "Constitución" que copiaste. Esto define la personalidad y las reglas del asistente.</p><a href="https://aistudio.google.com/prompts/new_chat" target="_blank" rel="noopener noreferrer" class="cta-button">🚀 Ir a AI Studio</a></div>
+                </article>
+                <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_2_guardar.png" alt="Captura de pantalla mostrando guardar el prompt."></div>
+                    <div class="step-content"><h4>3. Guarda tu <span class="highlight">Prompt</span> y Actualiza</h4><p>Es fundamental que guardes tu trabajo. Haz clic en el botón <strong class="highlight">"Guardar"</strong> en la esquina superior derecha y asegúrate de que la opción de <strong class="highlight">autoguardado (Autosave)</strong> esté activada. <strong class="highlight">Después, actualiza la página de tu navegador</strong> para que los cambios se apliquen correctamente.</p></div>
+                </article>
+                 <article class="step">
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_4_sube.png" alt="Captura de pantalla mostrando subir archivos."></div>
+                    <div class="step-content"><h4>4. Carga tus documentos <span class="highlight">cada vez que interactúes</span></h4><p>A diferencia de los "Gems", AI Studio no guarda los archivos. Deberás subir los <strong class="highlight">documentos de la Biblioteca</strong> al inicio de cada nueva conversación para que el asistente tenga el conocimiento necesario.</p><a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-button">📁 Descargar Biblioteca</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="direccion" class="fade-in-section" role="region" aria-labelledby="direccion-title">
+            <div class="container">
+                <h2 id="direccion-title">El Secreto para Dirigir a tu Equipo</h2>
+                <p class="direccion-intro">Para despertar a tus especialistas, la clave es una sola: <strong>SIEMPRE</strong> empieza tu conversación llamándolos por su nombre. Es la palabra mágica que activa su rol específico.</p>
+                <div class="direccion-grid">
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div><h4 class="card-title">Planificar un PDC</h4><p class="card-description">Invoca a la Arquitecta Pedagógica para estructurar tus clases.</p><div class="card-prompt" data-prompt="Paola, ayúdame a crear un PDC para 3ro de secundaria..."><span class="prompt-name">Paola,</span> ayúdame a crear un PDC para 3ro de secundaria...<button class="copy-button" aria-label="Copiar prompt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div><h4 class="card-title">Crear Material</h4><p class="card-description">Llama a la Creativa para diseñar guías y recursos atractivos.</p><div class="card-prompt" data-prompt="Beatriz, necesito una guía de aprendizaje basada en nuestro PDC..."><span class="prompt-name">Beatriz,</span> necesito una guía de aprendizaje basada en nuestro PDC...<button class="copy-button" aria-label="Copiar prompt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><h4 class="card-title">Diseñar Evaluaciones</h4><p class="card-description">Consulta a la Analista para elaborar instrumentos de evaluación.</p><div class="card-prompt" data-prompt="Karina, vamos a diseñar el plan de evaluación para esta unidad..."><span class="prompt-name">Karina,</span> vamos a diseñar el plan de evaluación para esta unidad...<button class="copy-button" aria-label="Copiar prompt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><h4 class="card-title">Entrenar Habilidades</h4><p class="card-description">Practica con el Coach para mejorar tus dinámicas y conversaciones.</p<div class="card-prompt" data-prompt="Percy, quiero simular una entrevista con un padre de familia..."><span class="prompt-name">Percy,</span> quiero simular una entrevista con un padre de familia...<button class="copy-button" aria-label="Copiar prompt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div><h4 class="card-title">Crear Actividades Digitales</h4><p class="card-description">Pide al Mentor Digital que transforme tus lecciones en experiencias web.</p><div class="card-prompt" data-prompt="Luis, transforma esta lección en una actividad web interactiva..."><span class="prompt-name">Luis,</span> transforma esta lección en una actividad web interactiva...<button class="copy-button" aria-label="Copiar prompt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer role="contentinfo">
         <div class="container">
@@ -183,7 +303,7 @@
               "name": "¿Qué es el Asistente Pedagógico Salesiano 2.0?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Es un sistema de IA de élite que funciona como un equipo de cinco expertos para ayudar a los docentes de Bolivia. Los especialistas son Paola (Arquitecta Curricular), Beatriz (Ilustrada Creativa), Karina (Analista de Evaluación), Percy (Coach Pedagógico) y Luis (Mentor Digital). Además, cuenta con Ivan, un orquestador que gestiona la sesión de trabajo. [cite: 9, 109, 166]"
+                "text": "Es un sistema de IA de élite que funciona como un equipo de cinco expertos para ayudar a los docentes de Bolivia. Los especialistas son Paola (Arquitecta Curricular), Beatriz (Ilustrada Creativa), Karina (Analista de Evaluación), Percy (Coach Pedagógico) y Luis (Mentor Digital). Además, cuenta con Ivan, un orquestador que gestiona la sesión de trabajo."
               }
             },
             {
@@ -191,7 +311,7 @@
               "name": "¿Cómo funciona el entrenamiento con Percy, el Coach?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Percy, el Coach Pedagógico, ofrece entrenamiento práctico a través de simulaciones. Puede simular entrevistas con padres, ayudar a practicar métodos activos en el aula, enseñar a usar la IA para el pensamiento crítico o crear escenarios de entrenamiento personalizados según la necesidad del docente. [cite: 143, 147, 148, 149, 150, 151]"
+                "text": "Percy, el Coach Pedagógico, ofrece entrenamiento práctico a través de simulaciones. Puede simular entrevistas con padres, ayudar a practicar métodos activos en el aula, enseñar a usar la IA para el pensamiento crítico o crear escenarios de entrenamiento personalizados según la necesidad del docente."
               }
             },
             {
@@ -199,7 +319,7 @@
               "name": "¿El asistente puede ayudarme a crear una página web o un video?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí. Luis, el Mentor Digital, puede guiarte paso a paso para crear actividades interactivas, presentaciones web en un solo archivo HTML, o incluso ayudarte a co-crear el guion para un video educativo generado por IA y luego implementarlo. [cite: 157, 158, 159, 161]"
+                "text": "Sí. Luis, el Mentor Digital, puede guiarte paso a paso para crear actividades interactivas, presentaciones web en un solo archivo HTML, o incluso ayudarte a co-crear el guion para un video educativo generado por IA y luego implementarlo."
               }
             },
             {
@@ -207,7 +327,7 @@
                 "name": "¿Qué hace Ivan, el Orquestador de Sesión?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ivan es el gestor del equipo. Da la bienvenida, recuerda los trabajos pendientes de sesiones anteriores y se asegura de que la transición entre los diferentes expertos sea fluida. También maneja las solicitudes que están fuera de las especialidades pedagógicas del equipo. [cite: 78, 166, 169, 171]"
+                  "text": "Ivan es el gestor del equipo. Da la bienvenida, recuerda los trabajos pendientes de sesiones anteriores y se asegura de que la transición entre los diferentes expertos sea fluida. También maneja las solicitudes que están fuera de las especialidades pedagógicas del equipo."
                 }
             }
           ]
@@ -219,7 +339,6 @@
     <script>
         // SCRIPT JS (SIN CAMBIOS RESPECTO A LA VERSIÓN ANTERIOR)
         document.addEventListener('DOMContentLoaded', () => {
-            // Animaciones al hacer scroll
             const sections = document.querySelectorAll('.fade-in-section');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -231,7 +350,6 @@
             }, { threshold: 0.1 });
             sections.forEach(section => observer.observe(section));
 
-            // Menú de navegación móvil
             const navToggle = document.querySelector('.nav-toggle');
             const navMenu = document.querySelector('.nav-menu');
             navToggle.addEventListener('click', () => {
@@ -243,7 +361,6 @@
                 link.addEventListener('click', () => navMenu.classList.remove('active'));
             });
 
-            // Funcionalidad de copiar al portapapeles
             document.querySelectorAll('.copy-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const promptText = button.parentElement.getAttribute('data-prompt');
