@@ -21,7 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -37,17 +37,17 @@
             --header-height: 70px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: var(--header-height); /* CORRECCIÓN: Evita que el contenido se oculte tras el header fijo */ }
+        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: var(--header-height); }
         body { font-family: 'Nunito Sans', sans-serif; background-color: var(--color-bg); color: var(--color-text); line-height: 1.8; font-weight: 400; overflow-x: hidden; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        main { padding-top: var(--header-height); /* CORRECCIÓN: Compensa la altura del header para la primera carga */ }
+        main { padding-top: var(--header-height); }
         section { padding: 100px 0; border-bottom: 1px solid #dee2e6; }
         section:last-of-type { border-bottom: none; }
-        h1, h2, h3, h4 { font-family: 'Lora', serif; color: var(--color-primary); font-weight: 600; line-height: 1.3; }
-        h1 { font-size: clamp(2.5rem, 6vw, 4rem); text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        h1, h2, h3, h4 { font-family: 'Lora', serif; color: var(--color-primary); font-weight: 700; line-height: 1.3; }
+        h1 { font-size: clamp(2.8rem, 7vw, 4.5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
         h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
         h3 { font-size: 1.9rem; margin-bottom: 40px; margin-top: 40px; }
-        h4 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-primary); font-weight: 700;}
+        h4 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-primary); }
         .highlight { color: var(--color-accent-blue); font-weight: 700; }
         
         .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; box-shadow: var(--shadow-sm); }
@@ -61,12 +61,13 @@
 
         .fade-in-section { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-        .cta-button { display: inline-block; background: linear-gradient(45deg, var(--color-accent-blue), #0056b3); color: var(--color-white); padding: 16px 42px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; margin-top: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: var(--shadow-lg); border: none; }
-        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(0, 123, 255, 0.3); }
+        .cta-button { display: inline-block; background: var(--color-accent-yellow); color: var(--color-primary-dark); padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px; margin-top: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s; box-shadow: var(--shadow-lg); border: none; }
+        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4); background-color: #ffca2c; }
         
-        #hero { background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 34, 68, 0.8)), url(https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=2070&q=80) no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-white); }
-        #hero p { font-size: 1.25rem; max-width: 700px; margin: 20px auto 0; opacity: 0.9; }
+        #hero { background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 34, 68, 0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-white); }
+        #hero p { font-size: 1.3rem; max-width: 700px; margin: 20px auto 0; opacity: 0.9; font-weight: 400; }
         
+        .section-intro { text-align: center; max-width: 700px; margin: -40px auto 60px auto; font-size: 1.1rem; color: #6c757d; }
         #capacidades { background-color: var(--color-white); }
         .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .capability-card { background: var(--color-white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
@@ -76,11 +77,9 @@
 
         #testimonios { background-color: #f8f9fa; }
         .testimonial-card { background: var(--color-white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-sm); text-align: center; }
-        .testimonial-card p { font-style: italic; margin-bottom: 1rem; }
+        .testimonial-card p { font-style: italic; margin-bottom: 1rem; font-size: 1.1rem; color: #495057; }
         .testimonial-author { font-weight: 700; color: var(--color-primary); }
 
-        .section-intro { text-align: center; max-width: 700px; margin: -40px auto 60px auto; font-size: 1.1rem; }
-        
         #lanzamiento { background-color: var(--color-white); }
         #lanzamiento .container { max-width: 800px; text-align: left; }
         #lanzamiento h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--color-accent-blue); padding-bottom: 10px; }
@@ -97,13 +96,13 @@
         
         #direccion { background: linear-gradient(170deg, #003366 0%, #002244 100%); color: var(--color-white); }
         #direccion h2 { color: var(--color-white); }
-        .direccion-intro { color: rgba(255, 255, 255, 0.8); } /* CORRECCIÓN: Contraste */
+        .direccion-intro { color: rgba(255, 255, 255, 0.8); }
         .direccion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .direccion-card { background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); text-align: center; transition: transform 0.3s ease, background 0.3s ease; display: flex; flex-direction: column; }
         .direccion-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.2); }
         .card-icon { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; color: var(--color-accent-yellow); }
         .card-title { font-family: 'Lora', serif; color: var(--color-white); font-size: 1.5rem; margin-bottom: 1rem; }
-        .card-description { font-weight: 300; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; flex-grow: 1; } /* CORRECCIÓN: Contraste */
+        .card-description { font-weight: 300; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; flex-grow: 1; }
         .card-prompt { position: relative; background: rgba(0, 0, 0, 0.3); color: var(--color-white); padding: 1rem; border-radius: 8px; font-family: 'Menlo', 'Courier New', Courier, monospace; font-size: 0.95rem; text-align: left; }
         .copy-button { position: absolute; top: 0.5rem; right: 0.5rem; background: var(--color-accent-yellow); color: var(--color-primary-dark); border: none; border-radius: 5px; cursor: pointer; padding: 0.3rem 0.5rem; opacity: 0.8; transition: opacity 0.3s; }
         .copy-button:hover { opacity: 1; }
@@ -200,33 +199,33 @@
 
                 <h3>Opción A: Para Cuentas de Pago (con Gems de Gemini)</h3>
                 <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento."></div>
                     <div class="step-content"><h4>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h4><p>Este es su ADN. Haz clic para abrir la <strong class="highlight">Instrucción Maestra</strong>, selecciónala por completo y cópiala en tu portapapeles.</p><a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" rel="noopener noreferrer" class="cta-button">📄 Abrir Instrucción Maestra</a></div>
                 </article>
                 <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-2-extraer-zip.jpg" alt="Captura de pantalla mostrando la descarga de un archivo ZIP con los recursos salesianos."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura-2-extraer-zip.jpg" alt="Captura de pantalla mostrando la descarga de un archivo ZIP con los recursos salesianos."></div>
                     <div class="step-content"><h4>2. Construye su <span class="highlight">"Biblioteca"</span> Salesiana</h4><p>Un buen equipo necesita buenos libros. Descarga estos documentos fundamentales y descomprímelos para liberar el conocimiento.</p><a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-button">📁 Descargar Biblioteca</a></div>
                 </article>
                 <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-3-configurar-gem.jpg" alt="Captura de pantalla mostrando la interfaz de Gemini para pegar instrucciones y subir archivos de conocimiento."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura-3-configurar-gem.jpg" alt="Captura de pantalla mostrando la interfaz de Gemini para pegar instrucciones y subir archivos de conocimiento."></div>
                     <div class="step-content"><h4>3. Ensambla la <span class="highlight">Magia</span> en Gemini</h4><p>Abre Gemini, crea un nuevo "Gem". Pega la <strong class="highlight">Constitución</strong> en "Instrucciones" y sube los archivos de la <strong class="highlight">Biblioteca</strong>. ¡Tu equipo ha nacido!</p><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="cta-button">🚀 Ir a Gemini</a></div>
                 </article>
 
                 <h3>Opción B: Para Cuentas Gratuitas (con AI Studio)</h3>
                 <article class="step">
-                     <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento."></div>
+                     <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura-1-copiar-doc.jpg" alt="Captura de pantalla mostrando el texto de la Instrucción Maestra en un documento."></div>
                     <div class="step-content"><h4>1. Adopta la <span class="highlight">"Constitución"</span> del Equipo</h4><p>Copia la <strong class="highlight">Instrucción Maestra</strong> completa para darle el alma a tu asistente.</p><a href="https://docs.google.com/document/d/e/2PACX-1vSIklb8ZkcKOff2vo_bw5bQo_masF7048f6AAfIqpgASbS7j_a9bDK4kH7dT9rzpWq9b1jtMk37wW8v/pub" target="_blank" rel="noopener noreferrer" class="cta-button">📄 Abrir Instrucción Maestra</a></div>
                 </article>
                 <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_1_instruccion.png" alt="Captura de pantalla de AI Studio para pegar instrucciones."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura_1_instruccion.png" alt="Captura de pantalla de AI Studio para pegar instrucciones."></div>
                     <div class="step-content"><h4>2. Ingresa a <span class="highlight">AI Studio</span> e Inserta la Instrucción</h4><p>Ve a Google AI Studio. En las <strong class="highlight">instrucciones del sistema</strong>, pega la "Constitución" que copiaste.</p><a href="https://aistudio.google.com/prompts/new_chat" target="_blank" rel="noopener noreferrer" class="cta-button">🚀 Ir a AI Studio</a></div>
                 </article>
                 <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_2_guardar.png" alt="Captura de pantalla mostrando guardar el prompt."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura_2_guardar.png" alt="Captura de pantalla mostrando guardar el prompt."></div>
                     <div class="step-content"><h4>3. Guarda tu <span class="highlight">Prompt</span> y Actualiza</h4><p>Haz clic en <strong class="highlight">"Guardar"</strong> y activa el <strong class="highlight">autoguardado</strong>. Después, <strong class="highlight">actualiza la página</strong> de tu navegador.</p></div>
                 </article>
                  <article class="step">
-                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="./captura_4_sube.png" alt="Captura de pantalla mostrando subir archivos."></div>
+                    <div class="screenshot-wrapper"><div class="browser-bar"><span class="browser-dot" style="background:#ff5f56;"></span><span class="browser-dot" style="background:#ffbd2e;"></span><span class="browser-dot" style="background:#27c93f;"></span></div><img src="https://elmejorequipo.github.io/asistentepedagogicodb/captura_4_sube.png" alt="Captura de pantalla mostrando subir archivos."></div>
                     <div class="step-content"><h4>4. Carga tus documentos <span class="highlight">cada vez que interactúes</span></h4><p>AI Studio no guarda los archivos. Deberás subir los <strong class="highlight">documentos de la Biblioteca</strong> al inicio de cada nueva conversación.</p><a href="https://drive.google.com/drive/folders/1GhUozOaUuMyuhFHNrb0bt-PyEa_sIRFa?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-button">📁 Descargar Biblioteca</a></div>
                 </article>
             </div>
@@ -251,11 +250,14 @@
         <section id="direccion" class="fade-in-section" role="region" aria-labelledby="direccion-title">
             <div class="container">
                 <h2 id="direccion-title">El Secreto para Dirigir a tu Equipo</h2>
-                <p class="direccion-intro section-intro">Para despertar a tus especialistas, la clave es una sola: <strong>SIEMPRE</strong> empieza tu conversación llamándolos por su nombre. Es la palabra mágica que activa su rol específico.</p>
+                <p class="section-intro direccion-intro">Para despertar a tus especialistas, la clave es una sola: <strong>SIEMPRE</strong> empieza tu conversación llamándolos por su nombre. Es la palabra mágica que activa su rol específico.</p>
                 <div class="direccion-grid">
                     <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div><h4 class="card-title">Planificar un PDC</h4><p class="card-description">Invoca a la Arquitecta Pedagógica para estructurar tus clases.</p><div class="card-prompt" data-prompt="Paola, ayúdame a crear un PDC para 3ro de secundaria..."><button class="copy-button" aria-label="Copiar prompt"><div class="copy-feedback"></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span class="prompt-name">Paola,</span> ayúdame a crear un PDC para 3ro de secundaria...</div></div>
                     <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div><h4 class="card-title">Crear Material</h4><p class="card-description">Llama a la Creativa para diseñar guías y recursos atractivos.</p><div class="card-prompt" data-prompt="Beatriz, necesito una guía de aprendizaje basada en nuestro PDC..."><button class="copy-button" aria-label="Copiar prompt"><div class="copy-feedback"></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span class="prompt-name">Beatriz,</span> necesito una guía de aprendizaje basada en nuestro PDC...</div></div>
-                    </div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><h4 class="card-title">Diseñar Evaluaciones</h4><p class="card-description">Consulta a la Analista para elaborar instrumentos de evaluación.</p><div class="card-prompt" data-prompt="Karina, vamos a diseñar el plan de evaluación para esta unidad..."><button class="copy-button" aria-label="Copiar prompt"><div class="copy-feedback"></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span class="prompt-name">Karina,</span> vamos a diseñar el plan de evaluación...</div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><h4 class="card-title">Entrenar Habilidades</h4><p class="card-description">Practica con el Coach para mejorar tus dinámicas y conversaciones.</p><div class="card-prompt" data-prompt="Percy, quiero simular una entrevista con un padre de familia..."><button class="copy-button" aria-label="Copiar prompt"><div class="copy-feedback"></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span class="prompt-name">Percy,</span> quiero simular una entrevista...</div></div>
+                    <div class="direccion-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div><h4 class="card-title">Crear Actividades Digitales</h4><p class="card-description">Pide al Mentor Digital que transforme tus lecciones en experiencias web.</p><div class="card-prompt" data-prompt="Luis, transforma esta lección en una actividad web interactiva..."><button class="copy-button" aria-label="Copiar prompt"><div class="copy-feedback"></div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span class="prompt-name">Luis,</span> transforma esta lección en una actividad...</div></div>
+                </div>
             </div>
         </section>
     </main>
@@ -269,7 +271,58 @@
     </footer>
 
     <script type="application/ld+json">
-        </script>
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Asistente Pedagógico Salesiano 2.1",
+              "operatingSystem": "Web (Google Gemini, Google AI Studio)",
+              "applicationCategory": "EducationalApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "ratingCount": "42"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Un equipo de IA con 5 especialistas (planificación, creatividad, evaluación, coaching, tecnología) diseñado para servir a los docentes del ecosistema educativo boliviano, alineado con el MESCP y el carisma Salesiano."
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿El Asistente Pedagógico Salesiano entiende el MESCP de Bolivia?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, el Asistente Pedagógico Salesiano 2.1 está específicamente programado para entender y aplicar los principios del Modelo Educativo Sociocomunitario Productivo (MESCP), incluyendo la creación de Objetivos Holísticos y la alineación con el Proyecto Socioproductivo (PSP)."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Cómo me ayuda el asistente con la inclusión (DUA)?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El asistente integra el Diseño Universal del Aprendizaje (DUA) por defecto. Beatriz, la especialista en creatividad, incluye múltiples formas de representación, expresión e implicación en todas las guías. Además, el sistema siempre pregunta por adaptaciones curriculares específicas al inicio de la planificación."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Puedo automatizar mis informes de planificación con esta herramienta?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Paola, la arquitecta curricular, puede exportar tu Plan de Desarrollo Curricular (PDC) a un formato compatible con Google Sheets. La guía incluye un tutorial completo para usarlo con Autocrat, un complemento que genera documentos PDF o Google Docs automáticamente a partir de tu base de datos de planificación."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+    </script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
